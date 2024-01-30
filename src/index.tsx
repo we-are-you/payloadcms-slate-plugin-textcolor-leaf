@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Editor } from 'slate'
 import { useSlate } from 'slate-react'
 
+import { useOutsideClick } from './useOutsideClick'
+
 import './index.scss'
 
 type colorListItem = {
@@ -41,8 +43,12 @@ export default function wruTextColorLeaf({ name, colorList }: wruTextColorLeafTy
 
         const color = currentColor ? currentColor : '#000'
 
+        const ref = useOutsideClick(() => {
+            setIsOpen(false)
+        })
+
         return (
-            <div className="wru-color-picker rich-text__button">
+            <div className="wru-color-picker rich-text__button" ref={ref}>
                 <label
                     onMouseDown={event => {
                         event.preventDefault()
