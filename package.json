@@ -1,0 +1,15 @@
+{
+    "name": "@wru/payloadcms-slate-plugin-textcolor-leav",
+    "version": "0.0.1",
+    "homepage": "https://we-are-you.de",
+    "repository": "git@github.com:we-are-you/payloadcms-slate-plugin-textcolor-leav.git",
+    "description": "payloadcms-slate-plugin-textcolor-leav",
+    "author": {
+        "email": "christian@we-are-you.de",
+        "name": "Christian Linke"
+    },
+    "license": "MIT",
+    "peerDependencies": {
+        "payload": "^2.0.0"
+    }
+}

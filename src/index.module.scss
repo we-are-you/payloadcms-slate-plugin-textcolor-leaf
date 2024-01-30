@@ -1,0 +1,35 @@
+.wruColorPickerColor {
+    border-radius: 100%;
+    cursor: pointer;
+    height: 1.4423076923rem;
+    width: 1.4423076923rem;
+}
+
+.wruColorPickerColorResett {
+    border: 1px solid var(--theme-elevation-150);
+}
+
+.wruColorPickerList {
+    background: var(--theme-elevation-0);
+    border: 1px solid var(--theme-elevation-150);
+    cursor: default;
+    left: 0;
+    padding: 0.4807692308rem;
+    position: absolute;
+    top: 100%;
+    width: calc((1.4423076923rem * 3) + (10px * 2) + (0.4807692308rem * 2) + 2px);
+    z-index: 1;
+
+    ul,
+    ul li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
