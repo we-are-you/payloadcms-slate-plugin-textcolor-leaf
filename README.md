@@ -1,12 +1,12 @@
-# PayloadCMS SlateEditor Leav - TextColor
+# PayloadCMS SlateEditor Leaf - TextColor
 Add a simple text color picker - a predefined list - to the SlateJS editor.
 
 ## Installation
 
 ```bash
-  yarn add @wru/payloadcms-slate-plugin-textcolor-leav
+  yarn add @wru/payloadcms-slate-plugin-textcolor-leaf
   # OR
-  npm i @wru/payloadcms-slate-plugin-textcolor-leav
+  npm i @wru/payloadcms-slate-plugin-textcolor-leaf
 ```
 
 ## Usage

@@ -1,20 +1,45 @@
 {
-    "name": "@wru/payloadcms-slate-plugin-textcolor-leav",
-    "version": "0.0.6",
+    "name": "@wru/payloadcms-slate-plugin-textcolor-leaf",
+    "version": "0.0.8",
     "private": false,
     "homepage": "https://we-are-you.de",
+    "main": "dist/index.js",
     "repository": {
         "type": "git",
-        "url": "git@github.com:we-are-you/payloadcms-slate-plugin-textcolor-leav.git"
+        "url": "git@github.com:we-are-you/payloadcms-slate-plugin-textcolor-leaf.git"
     },
-    "description": "payloadcms-slate-plugin-textcolor-leav",
+    "description": "payloadcms-slate-plugin-textcolor-leaf",
     "author": {
         "email": "christian@we-are-you.de",
         "name": "Christian Linke"
     },
     "license": "MIT",
-    "scripts": {},
+    "scripts": {
+        "build": "tsc && npm run copy:scss",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "copy:scss": "copyfiles -u 1 \"src/**/*.scss\" dist",
+        "prepare": "npm run build"
+    },
     "peerDependencies": {
-        "payload": "^2.0.0"
-    }
+        "@payloadcms/richtext-slate": "^1.0.0",
+        "payload": "^2.0.0",
+        "react": "^18.2.0"
+    },
+    "keywords": [
+        "payload",
+        "cms",
+        "slate",
+        "typescript",
+        "react",
+        "color",
+        "picker"
+    ],
+    "devDependencies": {
+        "copyfiles": "^2.4.1"
+    },
+    "files": [
+        "dist",
+        "types.js",
+        "types.d.ts"
+    ]
 }

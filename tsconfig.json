@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "target": "es2019",
+      "outDir": "./dist",
+      "allowJs": true,
+      "module": "commonjs",
+      "sourceMap": true,
+      "jsx": "react",
+      "esModuleInterop": true,
+      "declaration": true,
+      "declarationDir": "./dist",
+      "skipLibCheck": true,
+      "strict": true,
+      "paths": {
+        "react": ["./node_modules/@types/react"],
+      }
+    },
+    "include": [
+      "src/**/*"
+    ],
+  }

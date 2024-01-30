@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Editor } from 'slate'
 import { useSlate } from 'slate-react'
 
-import styles from './index.module.scss'
+import './index.scss'
 
 type colorListItem = {
     label: string
@@ -15,16 +15,17 @@ type wruTextColorLeafType = {
 }
 
 export default function wruTextColorLeaf({ name, colorList }: wruTextColorLeafType) {
-    const getActiveColor = (editor, format) => {
+    const getActiveColor = (editor: any, format: any) => {
         const leaves = Editor.marks(editor)
+        // @ts-ignore
         return leaves && leaves[name] ? leaves[name] : null
     }
 
-    const removeLeaf = (editor, format) => {
+    const removeLeaf = (editor: any, format: any) => {
         Editor.removeMark(editor, format)
     }
 
-    const addLeaf = (editor, format, color) => {
+    const addLeaf = (editor: any, format: any, color: string) => {
         Editor.addMark(editor, format, color)
     }
 
@@ -48,19 +49,16 @@ export default function wruTextColorLeaf({ name, colorList }: wruTextColorLeafTy
                         setIsOpen(!isOpen)
                     }}
                 >
-                    <div
-                        className={styles.wruColorPickerColor}
-                        style={{ backgroundColor: color }}
-                    ></div>
+                    <div className="wruColorPickerColor" style={{ backgroundColor: color }}></div>
                 </label>
                 {isOpen && (
-                    <div className={styles.wruColorPickerList}>
+                    <div className="wruColorPickerList">
                         <ul>
                             {colorList.map(function (item, index) {
                                 return (
                                     <li key={index} title={item.label}>
                                         <div
-                                            className={styles.wruColorPickerColor}
+                                            className="wruColorPickerColor"
                                             style={{ backgroundColor: item.color }}
                                             onMouseDown={event => {
                                                 event.preventDefault()
@@ -85,10 +83,7 @@ export default function wruTextColorLeaf({ name, colorList }: wruTextColorLeafTy
                             })}
                             <li>
                                 <div
-                                    className={[
-                                        styles.wruColorPickerColor,
-                                        styles.wruColorPickerColorResett,
-                                    ].join(' ')}
+                                    className="wruColorPickerColor wruColorPickerColorResett"
                                     onMouseDown={event => {
                                         event.preventDefault()
                                         removeLeaf(editor, format)
@@ -103,14 +98,14 @@ export default function wruTextColorLeaf({ name, colorList }: wruTextColorLeafTy
         )
     }
 
-    const LeafButton = ({ format, children }) => {
+    const LeafButton = ({ format, children }: { format: any; children: any }) => {
         const editor = useSlate()
         const currentColor = getActiveColor(editor, format)
 
         return <ColorSelect editor={editor} format={format} currentColor={currentColor} />
     }
 
-    const Button = ({ format, children }) => {
+    const Button = ({ format, children }: { format: any; children: any }) => {
         return (
             <div>
                 <LeafButton format={name}>{{ children }}</LeafButton>
@@ -118,7 +113,15 @@ export default function wruTextColorLeaf({ name, colorList }: wruTextColorLeafTy
         )
     }
 
-    const Leaf = ({ attributes, leaf, children }) => {
+    const Leaf = ({
+        attributes,
+        leaf,
+        children,
+    }: {
+        attributes: any
+        leaf: any
+        children: any
+    }) => {
         if (leaf[name]) {
             return (
                 <span
