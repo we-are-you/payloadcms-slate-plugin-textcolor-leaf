@@ -1,6 +1,7 @@
 {
     "name": "@wru/payloadcms-slate-plugin-textcolor-leav",
     "version": "0.0.1",
+    "private": false,
     "homepage": "https://we-are-you.de",
     "repository": "git@github.com:we-are-you/payloadcms-slate-plugin-textcolor-leav.git",
     "description": "payloadcms-slate-plugin-textcolor-leav",
@@ -11,5 +12,9 @@
     "license": "MIT",
     "peerDependencies": {
         "payload": "^2.0.0"
-    }
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+      },
 }
