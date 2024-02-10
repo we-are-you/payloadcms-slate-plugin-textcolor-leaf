@@ -1,24 +1,54 @@
+.wruColorPicker {
+
+    > label {
+        cursor: pointer;
+        display: flex;
+        border-bottom: 2px solid transparent;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 14px;
+        margin: 1px 4px 0 4px;
+    }
+}
+
 .wruColorPickerColor {
-    border: 1px solid var(--theme-elevation-150);
-    border-radius: 100%;
+    border-radius: 3px;
     cursor: pointer;
     height: 1.4423076923rem;
     width: 1.4423076923rem;
 }
 
-.wruColorPickerColorResett {
-    border: 1px solid var(--theme-elevation-150);
+.wruColorPickerColorReset {
+
+    .wruColorPickerColor {
+        border: 1px solid var(--theme-elevation-150);
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+            background: #ededed;
+            content: '';
+            display: block;
+            height: 2px;
+            inset: 7px auto auto -8px;
+            position: absolute;
+            transform: rotate(-45deg);
+            width: 200%;
+        }
+    }
 }
 
 .wruColorPickerList {
     background: var(--theme-elevation-0);
     border: 1px solid var(--theme-elevation-150);
+    box-shadow: 0 2px 3px 0 rgba(0, 2, 4, 0.13), 0 6px 4px -4px rgba(0, 2, 4, 0.1);
     cursor: default;
     left: 0;
-    padding: 0.4807692308rem;
+    padding: 0.9615384616rem;
     position: absolute;
     top: 100%;
-    width: calc((1.4423076923rem * 3) + (10px * 2) + (0.4807692308rem * 2) + 2px);
+    max-width: calc((1.4423076923rem * 4) + (4px * 4) + (0.9615384616rem * 2));
+    width: max-content;
     z-index: 1;
 
     ul,
@@ -31,6 +61,6 @@
     ul {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 4px;
     }
 }

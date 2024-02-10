@@ -48,14 +48,15 @@ export default function wruTextColorLeaf({ name, colorList }: wruTextColorLeafTy
         })
 
         return (
-            <div className="wru-color-picker rich-text__button" ref={ref}>
+            <div className="wruColorPicker rich-text__button" ref={ref}>
                 <label
                     onMouseDown={event => {
                         event.preventDefault()
                         setIsOpen(!isOpen)
                     }}
+                    style={{ borderColor: color }}
                 >
-                    <div className="wruColorPickerColor" style={{ backgroundColor: color }}></div>
+                    A
                 </label>
                 {isOpen && (
                     <div className="wruColorPickerList">
@@ -87,9 +88,9 @@ export default function wruTextColorLeaf({ name, colorList }: wruTextColorLeafTy
                                     </li>
                                 )
                             })}
-                            <li>
+                            <li className="wruColorPickerColorReset">
                                 <div
-                                    className="wruColorPickerColor wruColorPickerColorResett"
+                                    className="wruColorPickerColor"
                                     onMouseDown={event => {
                                         event.preventDefault()
                                         removeLeaf(editor, format)
